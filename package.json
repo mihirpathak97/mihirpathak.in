@@ -9,7 +9,9 @@
     "url": "htts://mihirpathak.in"
   },
   "dependencies": {
+    "antd": "^3.19.3",
     "node-sass": "^4.12.0",
+    "rc-animate": "^2.8.3",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-router": "^5.0.1",

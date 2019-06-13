@@ -1,0 +1,63 @@
+{
+  "projects": [
+    {
+      "title": "Audius",
+      "content": "A full fledged desktop application built using electronjs as the desktop engine and React JS for the front-end.",
+      "github_url": "https://github.com/mihirpathak97/audius"
+    },
+    {
+      "title": "AllQ",
+      "content": "",
+      "site_url": "https://allq.in"
+    },
+    {
+      "title": "MindKraft 2018",
+      "content": "Built and deployed a full featured, resonsive website and Android app, along with a REST API and hosted it on an AWS EC2 instance server.",
+      "github_url": "https://github.com/mihirpathak97/mindkraft_cms"
+    },
+    {
+      "title": "Rainbow",
+      "content": "A CLI based audio library management program that supports audio fingerprinting and metadata embedding library built on Python 3.",
+      "github_url": "https://github.com/mihirpathak97/rainbow"
+    },
+    {
+      "title": "InkMachine",
+      "content": "A tiny startup that provides A3 posters, both pre-designed and custom images at a good prices inside campus.",
+      "site_url": "https://inkmachine.xyz"
+    }
+  ],
+  "experience": [
+    {
+      "title": "Full Stack Developer",
+      "content": "I have been at Neevan IT Solutions as a Full Stack developer since December 2018. I have built sleek and performance oriented websites and for numerous clients since then."
+    },
+    {
+      "title": "Head of Tech Team",
+      "content": "Appointed for MindKraft 2018 to lead a team of 12 people handling registration and the website."
+    },
+    {
+      "title": "Network Trainee",
+      "content": "I worked at CTC, Karunya for a period of 8 months where I learnt a great deal about networking and backend management."
+    }
+  ],
+  "certifications": [
+    {
+      "title": "Cloud Specialist",
+      "content": "Certied by CloudBull Asia for completing a course on SalesForce for building and deploying cloud applications."
+    },
+    {
+      "title": "Python 3",
+      "content": "Certied by Udemy as a Python 3 programmer after completing their online course."
+    }
+  ],
+  "education": [
+    {
+      "title": "Karunya Institute of Technology",
+      "content": "Computer Science and Engineering - 6.87 GPA (2019)"
+    },
+    {
+      "title": "Kendriya Vidyalaya",
+      "content": "Science with Computer Science - 80.02% (2015)"
+    }
+  ]
+}
