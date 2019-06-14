@@ -1,19 +1,30 @@
 {
+  "about": "Hey there! I'am Mihir Pathak. <br/><br />I code, read and write.<br />I am a CS undergrad with experience working in the web development industry. <br /><br />Checkout the tabs to know more about me!",
   "projects": [
     {
       "title": "Audius",
-      "content": "A full fledged desktop application built using electronjs as the desktop engine and React JS for the front-end.",
+      "content": "A full fledged desktop application built using electronjs that allows users to download songs from YouTube and Spotify",
       "github_url": "https://github.com/mihirpathak97/audius"
     },
     {
       "title": "AllQ",
-      "content": "",
+      "content": "AllQ is a freelance project that I did for a client that is basically an online E-commerce website that allows users to sell products.",
       "site_url": "https://allq.in"
+    },
+    {
+      "title": "KNot",
+      "content": "A platform that allows users to send targeted notifications to anyone using the KNot mobile application",
+      "github_url": "https://github.com/mihirpathak97/knot"
+    },
+    {
+      "title": "Counter",
+      "content": "A cross-platform desktop and mobile applications that allows users to create and manipulate realtime counters using FireBase",
+      "github_url": "https://github.com/mihirpathak97/Counter"
     },
     {
       "title": "MindKraft 2018",
       "content": "Built and deployed a full featured, resonsive website and Android app, along with a REST API and hosted it on an AWS EC2 instance server.",
-      "github_url": "https://github.com/mihirpathak97/mindkraft_cms"
+      "github_url": "https://github.com/mihirpathak97/mindkraft-boilerplate"
     },
     {
       "title": "Rainbow",
@@ -26,17 +37,65 @@
       "site_url": "https://inkmachine.xyz"
     }
   ],
+  "skills": {
+    "Web Devlopment": [
+      "HTML5",
+      "CSS3 (with Flexbox)",
+      "ES6+ JavaScript",
+      "PHP",
+      "Node JS"
+    ],
+    "JavaScript Frameworks & Libraries": [
+      "React.js",
+      "Vue.js",
+      "AdonisJS",
+      "Express.js"
+    ],
+    "PHP Framweworks": [
+      "Laravel",
+      "CodeIgnitor"
+    ],
+    "CSS Frameworks & Libraries": [
+      "SASS/SCSS",
+      "LESS",
+      "Bootstrap 4",
+      "Material UI"
+    ],
+    "Programming Languages": [
+      "C/C++",
+      "Java",
+      "Python"
+    ],
+    "Database": [
+      "SQL",
+      "Mongo DB",
+      "FireBase"
+    ],
+    "Cloud & Deployment": [
+      "AWS",
+      "Nginx/Apache",
+      "Continous Integration"
+    ],
+    "VCS": [
+      "Git"
+    ]
+  },
   "experience": [
     {
       "title": "Full Stack Developer",
+      "from": "Nov 2018",
+      "to": "Apr 2019",
       "content": "I have been at Neevan IT Solutions as a Full Stack developer since December 2018. I have built sleek and performance oriented websites and for numerous clients since then."
     },
     {
       "title": "Head of Tech Team",
+      "from": "Mar 2018",
       "content": "Appointed for MindKraft 2018 to lead a team of 12 people handling registration and the website."
     },
     {
       "title": "Network Trainee",
+      "from": "Sep 2016",
+      "to": "May 2017",
       "content": "I worked at CTC, Karunya for a period of 8 months where I learnt a great deal about networking and backend management."
     }
   ],
