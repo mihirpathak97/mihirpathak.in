@@ -8,7 +8,7 @@ class Routes extends Component {
   render() {
     return (
       <Switch>
-        <Route exact path="/" render={() => <Home />} />
+        <Route exact path="/*" render={() => <Home />} />
       </Switch>
     );
   }
