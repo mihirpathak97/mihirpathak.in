@@ -109,8 +109,11 @@ $breakpoint-xs: 576px;
     position: fixed;
     width: 100%;
     max-height: 4rem;
-    img {
+    .profile-img {
       border-radius: 50%;
+      img, picture img {
+        border-radius: 50%;
+      }
       width: 60px;
       height: 60px;
       @media screen and (max-width: $breakpoint-sm) {
@@ -155,7 +158,8 @@ $breakpoint-xs: 576px;
   background-color: #262626;
   height: 100%;
   text-align: center;
-  img {
+  .profile-img {
+    margin: auto;
     border-radius: 50%;
     width: 77%;
   }
