@@ -48,7 +48,8 @@ $breakpoint-xs: 576px;
     @media screen and (max-width: $breakpoint-md) {
       left: -21rem;
     }
-    img {
+    .profile-img {
+      margin: auto;
       border-radius: 50%;
       width: 77%;
     }

@@ -1,5 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { useStaticQuery, graphql } from "gatsby";
+import Img from "gatsby-image";
 
 import {
   Icon
@@ -9,23 +11,40 @@ import "./style.scss";
 
 const Layout = ({ children }) => {
 
-  const state = {
-    name: '',
-    title: '',
-    social: []
-  }
+  const data = useStaticQuery(graphql`
+    query {
+      profileImage: file(relativePath: { eq: "profile.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 300) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      },
+      infoJson {
+        name
+        title
+        url
+        social {
+          icon
+          type
+          url
+          username
+        }
+      }
+    }
+  `)
 
   return (
     <div className="App">
       <div className="sidebar">
-        {/* <img src={profile} alt="Profile" /> */}
+        <Img className="profile-img" fluid={data.profileImage.childImageSharp.fluid} />
         <div className="heading">
-          <h1 className="name">{state.name}</h1>
-          <h2 className="title">{state.title}</h2>
+          <h1 className="name">{data.infoJson.name}</h1>
+          <h2 className="title">{data.infoJson.title}</h2>
         </div>
         <div className="contact">
           {
-            state.social.map(social => {
+            data.infoJson.social.map(social => {
               return (
                 <div className="contact-wrapper" key={social.type}>
                   <Icon type={social.icon}/>
