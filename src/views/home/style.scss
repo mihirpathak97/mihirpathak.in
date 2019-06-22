@@ -1,16 +1,26 @@
+@import '../../style/mixins';
+
 .home {
   text-align: left;
   width: 90%;
   margin: auto;
   margin-top: 2.4rem;
+  background-color: #ffffff;
   @media screen and (max-width: 768px) {
     margin-top: 8rem;
   }
   @media screen and (max-width: 576px) {
     margin-top: 6rem;
   }
-  .ant-tabs-nav .ant-tabs-tab {
-    margin: 0;
+  .ant-tabs {
+    .ant-tabs-bar {
+      border-bottom: none;
+    }
+    .ant-tabs-nav {
+      .ant-tabs-tab {
+        margin: 0;
+      }
+    }
   }
   .code-heading {
     font-family: 'Fira Code';
@@ -60,4 +70,9 @@
       }
     }
   }
+
+  .mention {
+    @include animate-underline(#000000, auto, true);
+  }
+
 }
