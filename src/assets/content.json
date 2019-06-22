@@ -1,5 +1,5 @@
 {
-  "about": "Hey there! I'am Mihir Pathak. <br/><br />I code, read anythings I can get my hands on and on very rare occasions, write.<br />I am a CS undergrad with experience working in the web development industry. I currently work as a front-end developer at <a href=\"https://pickyourtrail.com\" class=\"mention\" target=\"_blank\" rel=\"noreferrer noopener\">@pickyourtrail</a><br /><br />Checkout the tabs to know more about me!",
+  "about": "Hey there! I'am Mihir Pathak. <br/><br />I code, read anythings I can get my hands on and on very rare occasions, write.<br />I am a CS undergrad with experience working in the web development industry. I currently work as a frontend developer at <a href=\"https://pickyourtrail.com\" class=\"mention\" target=\"_blank\" rel=\"noreferrer noopener\">@pickyourtrail</a><br /><br />",
   "projects": [
     {
       "title": "Audius",
@@ -82,18 +82,38 @@
   },
   "experience": [
     {
+      "title": "Frontend Developer",
+      "from": "Jun 2019",
+      "company": "Pickyourtrail",
+      "company_link": "https://pickyourtrail.com",
+      "content": "I joined as a React developer @ Pickyourtrail in June of 2019"
+    },
+    {
+      "title": "Freelance Web Developer",
+      "from": "Apr 2019",
+      "to": "Jun 2019",
+      "content": "After my internship @ Neevan, I decided to go freelance for a few months before I pick up another job at a company. I've been doing freelancing since 2017 but it was whenever I could get time out of college."
+    },
+    {
       "title": "Full Stack Developer",
+      "company": "Neevan IT Solutions",
+      "company_link": "https://neevan.co.in",
       "from": "Nov 2018",
       "to": "Apr 2019",
       "content": "I have been at Neevan IT Solutions as a Full Stack developer since December 2018. I have built sleek and performance oriented websites and for numerous clients since then."
     },
     {
       "title": "Head of Tech Team",
+      "company": "KITS",
+      "company_link": "https://karunya.edu",
       "from": "Mar 2018",
+      "to": "Apr 2018",
       "content": "Appointed for MindKraft 2018 to lead a team of 12 people handling registration and the website."
     },
     {
       "title": "Network Trainee",
+      "company": "CTC, KITS",
+      "company_link": "https://ctc.karunya.edu",
       "from": "Sep 2016",
       "to": "May 2017",
       "content": "I worked at CTC, Karunya for a period of 8 months where I learnt a great deal about networking and backend management."
