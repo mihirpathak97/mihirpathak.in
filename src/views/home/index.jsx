@@ -7,7 +7,8 @@ import {
   Icon,
   Tabs,
   Collapse,
-  List
+  List,
+  Timeline
 } from 'antd';
 
 import { withRouter } from 'react-router';
@@ -15,6 +16,7 @@ import { withRouter } from 'react-router';
 import 'antd/lib/tabs/style/index.css';
 import 'antd/lib/collapse/style/index.css';
 import 'antd/lib/list/style/index.css';
+import 'antd/lib/timeline/style/index.css';
 
 const { TabPane } = Tabs;
 const Panel = Collapse.Panel;
@@ -68,12 +70,50 @@ class Home extends Component {
     return (
       <div className="home">
         <Tabs size={this.state.tabSize} activeKey={this.props.match.params[0] || '/'} onChange={this.handleTabChange}>
-          <TabPane tab="About" key="/">
+          <TabPane tab="Portfolio" key="/">
             <div className="plural-holder">
               <p className="about" dangerouslySetInnerHTML={{ __html: this.state.about }}></p>
+              <Timeline>
+                {
+                  this.state.experience.map(experience => {
+                    return (
+                      <Timeline.Item>
+                        <div className="singular-holder" key={experience.title}>
+                          <p className="code-heading">
+                            { experience.title }
+                            { experience.company && experience.company_link ? 
+                              ' @ '
+                              : null 
+                            }
+                            { experience.company && experience.company_link ? 
+                              <a 
+                              href={experience.company_link} 
+                              className="mention"
+                              target="_blank"
+                              rel="noreferrer noopener">
+                                {experience.company}
+                              </a>
+                              : null 
+                            }
+                          </p>
+                          <p className="period">
+                            { experience.from }
+                            {
+                              experience.to ? ` - ${experience.to}` : ' - Present'
+                            }
+                          </p>
+                          <p className="content">
+                            { experience.content }
+                          </p>
+                        </div>
+                      </Timeline.Item>
+                    )
+                  })
+                }
+              </Timeline>
             </div>
           </TabPane>
-          <TabPane tab="Projects" key="projects">
+          <TabPane tab="Side Projects" key="projects">
             <div className="plural-holder">
               {
                 this.state.projects.map(project => {
@@ -86,30 +126,6 @@ class Home extends Component {
                       </p>
                       <p className="content">
                         { project.content }
-                      </p>
-                    </div>
-                  )
-                })
-              }
-            </div>
-          </TabPane>
-          <TabPane tab="Experience" key="experience">
-            <div className="plural-holder">
-              {
-                this.state.experience.map(experience => {
-                  return (
-                    <div className="singular-holder" key={experience.title}>
-                      <p className="code-heading">
-                        { experience.title }
-                      </p>
-                      <p className="period">
-                        { experience.from }
-                        {
-                          experience.to ? ` - ${experience.to}` : null 
-                        }
-                      </p>
-                      <p className="content">
-                        { experience.content }
                       </p>
                     </div>
                   )
@@ -136,24 +152,6 @@ class Home extends Component {
                   })
                 }
               </Collapse>
-            </div>
-          </TabPane>
-          <TabPane tab="Certifications" key="certifications">
-            <div className="plural-holder">
-              {
-                this.state.certifications.map(certification => {
-                  return (
-                    <div className="singular-holder" key={certification.title}>
-                      <p className="code-heading">
-                        { certification.title }
-                      </p>
-                      <p className="content">
-                        { certification.content }
-                      </p>
-                    </div>
-                  )
-                })
-              }
             </div>
           </TabPane>
           <TabPane tab="Education" key="education">

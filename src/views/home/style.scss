@@ -21,6 +21,21 @@
       }
     }
   }
+
+  .ant-timeline {
+    padding-left: 2px;
+    .ant-timeline-item {
+      .ant-timeline-item-head {
+        top: -4px;
+        left: -2px;
+      }
+      .ant-timeline-item-content {
+        margin-left: 24px;
+        top: -8px;
+      }
+    }
+  }
+
   .code-heading {
     font-family: 'Fira Code';
     font-size: 1.4rem;
