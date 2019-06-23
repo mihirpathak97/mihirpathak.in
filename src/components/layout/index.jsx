@@ -102,7 +102,7 @@ const Layout = ({ children }) => {
           </div>
         </Drawer>
       </div>
-      <div>
+      <div className="container">
         {children}
       </div>
     </div>

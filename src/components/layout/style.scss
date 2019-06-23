@@ -137,6 +137,97 @@ $breakpoint-xs: 576px;
     }
   }
 
+  .home {
+    text-align: left;
+    width: 90%;
+    margin: auto;
+    margin-top: 2.4rem;
+    @media screen and (max-width: 768px) {
+      margin-top: 8rem;
+    }
+    @media screen and (max-width: 576px) {
+      margin-top: 6rem;
+    }
+    .ant-tabs {
+      .ant-tabs-bar {
+        border-bottom: none;
+      }
+      .ant-tabs-nav {
+        .ant-tabs-tab {
+          margin: 0;
+        }
+      }
+    }
+  
+    .ant-timeline {
+      padding-left: 2px;
+      .ant-timeline-item {
+        .ant-timeline-item-head {
+          top: -4px;
+          left: -2px;
+        }
+        .ant-timeline-item-content {
+          margin-left: 24px;
+          top: -8px;
+        }
+      }
+    }
+  
+    .code-heading {
+      font-family: 'Fira Code';
+      font-size: 1.4rem;
+    }
+    .ant-divider {
+      margin: auto;
+      margin-top: 3rem;
+      margin-bottom: 3rem;
+      width: 40%;
+      min-width: 40%;
+      border-top: 2px dashed #e8e8e8
+    }
+    .plural-holder {
+      &:last-child {
+        margin-bottom: 3rem;
+      }
+      .about {
+        font-size: 1rem;
+        font-family: 'Raleway';
+      }
+      .singular-holder {
+        .code-heading {
+          font-family: 'Raleway';
+          font-weight: 600;
+          font-size: 1rem;
+          margin-bottom: 0.4rem;
+          a {
+            text-decoration: none;
+            color: black;
+          }
+          i {
+            font-size: 1rem;
+            margin-left: 0.5rem;
+          }
+        }
+        .period {
+          font-size: 11px;
+          font-weight: bolder;
+          font-family: 'Fira Code';
+          padding: 0;
+          margin-top: 0;
+        }
+        .content {
+          font-family: 'Raleway';
+          margin-top: 0;
+        }
+      }
+    }
+  
+    .mention {
+      @include animate-underline(#000000, auto, true);
+    }
+  
+  }
+
   .container {
     position: absolute;
     right: 0;
