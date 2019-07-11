@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-import profile from '../assets/profile.jpg';
 import infoJson from '../assets/info.json';
 
 import {
@@ -40,7 +39,7 @@ class SideBar extends Component {
 
     return (
       <div className="topbar">
-        <img src={profile} alt="Profile" />
+        <img src={'/assets/media/profile-min.jpg'} alt="Profile" />
         <div className="heading">
           <h1 className="name">{this.state.name}</h1>
         </div>
@@ -52,7 +51,7 @@ class SideBar extends Component {
           onClose={() => {this.setState({showDrawer: false})}}
           visible={this.state.showDrawer}
         >
-          <img src={profile} alt="Profile" />
+          <img src={'/assets/media/profile-min.jpg'} alt="Profile" />
           <div className="heading">
             <h1 className="name">{this.state.name}</h1>
             <h2 className="title">{this.state.title}</h2>

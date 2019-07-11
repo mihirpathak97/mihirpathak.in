@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 
-import profile from '../assets/profile.jpg';
-
 import infoJson from '../assets/info.json';
 
 import {
@@ -27,7 +25,7 @@ class SideBar extends Component {
   render() {
     return (
       <div className="sidebar">
-        <img src={profile} alt="Profile" />
+        <img src={'/assets/media/profile-min.jpg'} alt="Profile" />
         <div className="heading">
           <h1 className="name">{this.state.name}</h1>
           <h2 className="title">{this.state.title}</h2>
