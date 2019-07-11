@@ -75,9 +75,9 @@ class Home extends Component {
               <p className="about" dangerouslySetInnerHTML={{ __html: this.state.about }}></p>
               <Timeline>
                 {
-                  this.state.experience.map(experience => {
+                  this.state.experience.map((experience, index) => {
                     return (
-                      <Timeline.Item>
+                      <Timeline.Item key={'experience-' + index}>
                         <div className="singular-holder" key={experience.title}>
                           <p className="code-heading">
                             { experience.title }
