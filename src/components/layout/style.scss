@@ -92,6 +92,27 @@ $breakpoint-xs: 576px;
         }
       }
     }
+    .legal {
+      position: absolute;
+      top: 80%;
+      text-align: left;
+      .using {
+        margin-left: 1.2rem;
+        font-size: 14px;
+        color: #f5f8fa;
+        i {
+          padding: 5px;
+        }
+        a {
+          @include animate-underline(#f5f8fa, 14px);
+        }
+      }
+      .copyright {
+        margin-left: 1.2rem;
+        font-size: 12px;
+        color: #f5f8fa;
+      }
+    }
   }
 
   .topbar {
@@ -314,6 +335,27 @@ $breakpoint-xs: 576px;
           transform: scaleX(1);
         }
       }
+    }
+  }
+  .legal {
+    position: absolute;
+    bottom: 1rem;
+    text-align: left;
+    .using {
+      margin-left: 1.2rem;
+      font-size: 12px;
+      color: #f5f8fa;
+      i {
+        padding: 5px;
+      }
+      a {
+        @include animate-underline(#f5f8fa, 12px);
+      }
+    }
+    .copyright {
+      margin-left: 1.2rem;
+      font-size: 12px;
+      color: #f5f8fa;
     }
   }
 }

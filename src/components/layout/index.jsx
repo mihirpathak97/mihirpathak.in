@@ -68,6 +68,10 @@ const Layout = ({ children }) => {
             })
           }
         </div>
+        <div className="legal">
+          <p className="using">Built with <Icon style={{color: 'red'}} theme="filled" type="heart"/> using <a className="mention" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">React.js</a></p>
+          <p className="copyright">Copyright (c) Mihir Pathak</p>
+        </div>
       </div>
 
       <div className="topbar">
@@ -99,6 +103,10 @@ const Layout = ({ children }) => {
                 )
               })
             }
+          </div>
+          <div className="legal">
+            <p className="using">Built with <Icon style={{color: 'red'}} theme="filled" type="heart"/> using <a className="mention" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">React.js</a></p>
+            <p className="copyright">Copyright (c) Mihir Pathak</p>
           </div>
         </Drawer>
       </div>
