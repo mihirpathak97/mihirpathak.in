@@ -246,7 +246,53 @@ $breakpoint-xs: 576px;
     .mention {
       @include animate-underline(#000000, auto, true);
     }
-  
+  }
+
+  .blog {
+    text-align: left;
+    width: 90%;
+    margin: auto;
+    margin-top: 2.5rem;
+    @media screen and (max-width: 768px) {
+      margin-top: 8rem;
+    }
+    @media screen and (max-width: 576px) {
+      margin-top: 6rem;
+    }
+
+    .posts {
+      margin-top: 3rem;
+      .post {
+        h1, h2, h3, h4, h5, h6 {
+          font-size: 1.5rem !important;
+          @media screen and (max-width: 768px) {
+            font-size: 1rem !important;
+          }
+        }
+        p {
+          font-size: 1rem;
+          @media screen and (max-width: 768px) {
+            font-size: 0.8rem;
+          }
+        }
+        .title {
+          font-size: 1.5rem !important;
+          margin-bottom: 5px;
+          @media screen and (max-width: 768px) {
+            font-size: 1rem !important;
+          }
+        }
+        .period {
+          font-size: 12px;
+          font-family: 'Fira Code';
+          padding: 0;
+          margin-top: 0;
+          @media screen and (max-width: 768px) {
+            font-size: 10px
+          }
+        }
+      }
+    }
   }
 
   .error {
