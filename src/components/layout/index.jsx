@@ -51,7 +51,7 @@ const Layout = ({ location, children }) => {
           }
         }
       },
-      infoJson {
+      contentfulInfo {
         name
         title
         url
@@ -70,12 +70,12 @@ const Layout = ({ location, children }) => {
       <div className="sidebar">
         <Img className="profile-img" fluid={data.profileImage.childImageSharp.fluid} />
         <div className="heading">
-          <h1 className="name">{data.infoJson.name}</h1>
-          <h2 className="title">{data.infoJson.title}</h2>
+          <h1 className="name">{data.contentfulInfo.name}</h1>
+          <h2 className="title">{data.contentfulInfo.title}</h2>
         </div>
         <div className="contact">
           {
-            data.infoJson.social.map(social => {
+            data.contentfulInfo.social.map(social => {
               return (
                 <div className="contact-wrapper" key={social.type}>
                   <Icon type={social.icon}/>
@@ -97,7 +97,7 @@ const Layout = ({ location, children }) => {
       <div className="topbar">
         <Link to="/"><Img className="profile-img" fluid={data.profileImage.childImageSharp.fluid} /></Link>
         <div className="heading">
-          <h1 className="name">{data.infoJson.name}</h1>
+          <h1 className="name">{data.contentfulInfo.name}</h1>
         </div>
         <Icon component={NavbarSvg} onClick={() => toggleDrawer(true)} />
 
@@ -109,12 +109,12 @@ const Layout = ({ location, children }) => {
         >
           <Img className="profile-img" fluid={data.profileImage.childImageSharp.fluid} />
           <div className="heading">
-            <h1 className="name">{data.infoJson.name}</h1>
-            <h2 className="title">{data.infoJson.title}</h2>
+            <h1 className="name">{data.contentfulInfo.name}</h1>
+            <h2 className="title">{data.contentfulInfo.title}</h2>
           </div>
           <div className="contact">
             {
-              data.infoJson.social.map(social => {
+              data.contentfulInfo.social.map(social => {
                 return (
                   <div className="contact-wrapper" key={social.type}>
                     <Icon type={social.icon}/>
