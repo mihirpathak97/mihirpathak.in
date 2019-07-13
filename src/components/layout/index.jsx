@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import PropTypes from "prop-types";
-import { useStaticQuery, graphql } from "gatsby";
+import PropTypes from 'prop-types';
+import { useStaticQuery, graphql, Link } from "gatsby";
 import Img from "gatsby-image";
 
 import {
@@ -12,9 +12,26 @@ import 'antd/lib/drawer/style/index.css';
 
 import "./style.scss";
 
-const Layout = ({ children }) => {
+const Layout = ({ location, children }) => {
 
   const [showDrawer, toggleDrawer] = useState(false)
+
+  const LinkToRender = () => {
+    switch (location) {
+      case 'home': return (
+        <div className="contact-wrapper">
+          <Icon type="book"/>
+          <Link to="/blog">Read my blog</Link>
+        </div>
+      )
+      default: return (
+        <div className="contact-wrapper">
+          <Icon type="home"/>
+          <Link to="/">Go Home</Link>
+        </div>
+      )
+    }
+  }
 
   const NavbarSvg = () => (
     <svg viewBox="64 64 896 896" data-icon="menu" width="1em" height="1em" fill="currentColor" aria-hidden="true"
@@ -68,6 +85,9 @@ const Layout = ({ children }) => {
             })
           }
         </div>
+        <div className="contact">
+          <LinkToRender />
+        </div>
         <div className="legal">
           <p className="using">Built with <Icon style={{color: 'red'}} theme="filled" type="heart"/> using <a className="mention" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">React.js</a></p>
           <p className="copyright">Copyright (c) Mihir Pathak</p>
@@ -104,6 +124,9 @@ const Layout = ({ children }) => {
               })
             }
           </div>
+          <div className="contact">
+            <LinkToRender />
+          </div>
           <div className="legal">
             <p className="using">Built with <Icon style={{color: 'red'}} theme="filled" type="heart"/> using <a className="mention" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">React.js</a></p>
             <p className="copyright">Copyright (c) Mihir Pathak</p>
@@ -118,7 +141,8 @@ const Layout = ({ children }) => {
 }
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired,
+  location: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired
 }
 
 export default Layout
