@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 
 import Layout from "../components/layout/index";
@@ -26,10 +26,6 @@ const IndexPage = () => {
     query {
       contentJson {
         about
-        education {
-          content
-          title
-        }
         projects {
           content
           github_url
@@ -58,10 +54,6 @@ const IndexPage = () => {
     }
   `)
 
-  const handleTabChange = (tab) => {
-    // this.props.history.push(tab)
-  }
-
   return (
     <Layout>
       <SEO title="Home" />
@@ -74,7 +66,7 @@ const IndexPage = () => {
                 {
                   data.contentJson.experience.map(experience => {
                     return (
-                      <Timeline.Item>
+                      <Timeline.Item key={experience.company_link}>
                         <div className="singular-holder" key={experience.title}>
                           <p className="code-heading">
                             { experience.title }
@@ -149,24 +141,6 @@ const IndexPage = () => {
                   })
                 }
               </Collapse>
-            </div>
-          </TabPane>
-          <TabPane tab="Education" key="education">
-            <div className="plural-holder">
-              {
-                data.contentJson.education.map(education => {
-                  return (
-                    <div className="singular-holder" key={education.title}>
-                      <p className="code-heading">
-                        { education.title }
-                      </p>
-                      <p className="content">
-                        { education.content }
-                      </p>
-                    </div>
-                  )
-                })
-              }
             </div>
           </TabPane>
         </Tabs>
