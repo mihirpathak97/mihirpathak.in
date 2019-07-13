@@ -12,7 +12,7 @@ const NotFoundPage = () => (
     <SEO title="Error" />
     <div className="error">
       <Icon type="warning" style={{color: 'yellow', fontSize: '64px'}}></Icon>
-      <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+      <p>You just hit a route that doesn&#39;t exist... the sadness. Lets get you <a href="/">home</a></p>
     </div>
   </Layout>
 )

@@ -75,7 +75,7 @@ const Layout = ({ children }) => {
       </div>
 
       <div className="topbar">
-        <Img className="profile-img" fluid={data.profileImage.childImageSharp.fluid} />
+        <Link to="/"><Img className="profile-img" fluid={data.profileImage.childImageSharp.fluid} /></Link>
         <div className="heading">
           <h1 className="name">{data.infoJson.name}</h1>
         </div>
