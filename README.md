@@ -1,8 +1,6 @@
-# Hello, Good Evening, and Welcome
+# Deprecated
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/e86d72b6-4917-4bd2-9d21-a3cb0354e83a/deploy-status)](https://app.netlify.com/sites/mihirpathak97/deploys)
-
-Welcome to the innards of [my website](https://mihirpathak.in).
+This is the old CRA code. Using Gatsby CMS now.
 
 ## Installation
 
