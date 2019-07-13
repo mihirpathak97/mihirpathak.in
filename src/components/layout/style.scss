@@ -249,6 +249,19 @@ $breakpoint-xs: 576px;
   
   }
 
+  .error {
+    text-align: center;
+    width: auto;
+    margin: auto;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @media screen and (max-width: 768px) {
+      width: 80vw;
+    }
+  }
+
   .container {
     position: absolute;
     right: 0;
