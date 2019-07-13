@@ -18,8 +18,7 @@ module.exports = {
       options: {
         spaceId: `5igcbf5607l6`,
         // Learn about environment variables: https://gatsby.dev/env-vars
-        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-        downloadLocal: true
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
       },
     },
     `gatsby-transformer-json`,
@@ -31,6 +30,8 @@ module.exports = {
       options: {
         name: `Mihir Pathak`,
         short_name: `Mihir Pathak`,
+        background_color: `#f5f8fa`,
+        theme_color: `#f5f8fa`,
         start_url: `/`,
         display: `minimal-ui`,
         icon: `src/images/icon.png`, // This path is relative to the root of the site.
@@ -38,6 +39,6 @@ module.exports = {
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    `gatsby-plugin-offline`,
   ],
 }
