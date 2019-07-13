@@ -18,7 +18,7 @@ const IndexPage = () => {
           title
           slug
           contentful_id
-          createdAt(fromNow: true)
+          createdAt(formatString: "DD MMM YYYY")
           content {
             json
           }
