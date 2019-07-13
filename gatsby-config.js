@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Mihir Pathak`,
-    description: `Code. Avid Reader. Curious Person`,
+    description: `Hey there! I'am Mihir Pathak, a full-stack developer epxperienced with working in React, PHP and Node. This is my personal site and blog`,
     author: `@mihirpathak97`,
   },
   plugins: [

@@ -44,14 +44,12 @@ const Layout = ({ location, children }) => {
 
   const data = useStaticQuery(graphql`
     query {
-      profileImage: file(relativePath: { eq: "profile.jpg" }) {
-        childImageSharp {
+      contentfulInfo {
+        profileImage {
           fluid(maxWidth: 300) {
-            ...GatsbyImageSharpFluid
+            ...GatsbyContentfulFluid_withWebp
           }
         }
-      },
-      contentfulInfo {
         name
         title
         url
@@ -68,7 +66,7 @@ const Layout = ({ location, children }) => {
   return (
     <div className="App">
       <div className="sidebar">
-        <Img className="profile-img" fluid={data.profileImage.childImageSharp.fluid} />
+        <Img className="profile-img" fluid={data.contentfulInfo.profileImage.fluid} />
         <div className="heading">
           <h1 className="name">{data.contentfulInfo.name}</h1>
           <h2 className="title">{data.contentfulInfo.title}</h2>
@@ -95,7 +93,7 @@ const Layout = ({ location, children }) => {
       </div>
 
       <div className="topbar">
-        <Link to="/"><Img className="profile-img" fluid={data.profileImage.childImageSharp.fluid} /></Link>
+        <Link to="/"><Img className="profile-img" fluid={data.contentfulInfo.profileImage.fluid} /></Link>
         <div className="heading">
           <h1 className="name">{data.contentfulInfo.name}</h1>
         </div>
@@ -107,7 +105,7 @@ const Layout = ({ location, children }) => {
           onClose={() => toggleDrawer(false)}
           visible={showDrawer}
         >
-          <Img className="profile-img" fluid={data.profileImage.childImageSharp.fluid} />
+          <Img className="profile-img" fluid={data.contentfulInfo.profileImage.fluid} />
           <div className="heading">
             <h1 className="name">{data.contentfulInfo.name}</h1>
             <h2 className="title">{data.contentfulInfo.title}</h2>
