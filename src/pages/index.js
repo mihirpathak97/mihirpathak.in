@@ -24,30 +24,37 @@ const IndexPage = () => {
 
   const data = useStaticQuery(graphql`
     query {
-      contentJson {
+      contentfulInfoAboutTextNode {
         about
-        projects {
+      }
+      allContentfulExperience {
+        nodes {
+          companyName
+          companyUrl
+          contentful_id
+          description
+          fromDate(formatString: "MMM YYYY")
+          title
+          toDate(formatString: "MMM YYYY")
+        }
+      }
+      allContentfulProjects(sort: {fields: createdAt, order: ASC}) {
+        nodes {
+          url
           content
-          github_url
-          site_url
+          contentful_id
           title
         }
-        experience {
-          company
-          company_link
-          content
-          from
-          title
-          to
-        }
+      }
+      contentfulSkills {
         skills {
           Web_Devlopment
-          CSS_Frameworks___Libraries
-          Cloud___Deployment
-          Database
           JavaScript_Frameworks___Libraries
           PHP_Framweworks
+          CSS_Frameworks___Libraries
+          Database
           Programming_Languages
+          Cloud___Deployment
           VCS
         }
       }
@@ -61,38 +68,38 @@ const IndexPage = () => {
         <Tabs>
           <TabPane tab="Portfolio" key="/">
             <div className="plural-holder">
-              <p className="about" dangerouslySetInnerHTML={{ __html: data.contentJson.about }}></p>
+              <p className="about" dangerouslySetInnerHTML={{ __html: data.contentfulInfoAboutTextNode.about }}></p>
               <Timeline>
                 {
-                  data.contentJson.experience.map(experience => {
+                  data.allContentfulExperience.nodes.map(experience => {
                     return (
-                      <Timeline.Item key={experience.company_link}>
+                      <Timeline.Item key={experience.companyUrl}>
                         <div className="singular-holder" key={experience.title}>
                           <p className="code-heading">
                             { experience.title }
-                            { experience.company && experience.company_link ? 
+                            { experience.companyName && experience.companyUrl ? 
                               ' @ '
                               : null 
                             }
-                            { experience.company && experience.company_link ? 
+                            { experience.companyName && experience.companyUrl ? 
                               <a 
-                              href={experience.company_link} 
+                              href={experience.companyUrl} 
                               className="mention"
                               target="_blank"
                               rel="noreferrer noopener">
-                                {experience.company}
+                                {experience.companyName}
                               </a>
                               : null 
                             }
                           </p>
                           <p className="period">
-                            { experience.from }
+                            { experience.fromDate }
                             {
-                              experience.to ? ` - ${experience.to}` : ' - Present'
+                              experience.toDate ? ` - ${experience.toDate}` : ' - Present'
                             }
                           </p>
                           <p className="content">
-                            { experience.content }
+                            { experience.description }
                           </p>
                         </div>
                       </Timeline.Item>
@@ -105,13 +112,14 @@ const IndexPage = () => {
           <TabPane tab="Side Projects" key="projects">
             <div className="plural-holder">
               {
-                data.contentJson.projects.map(project => {
+                data.allContentfulProjects.nodes.map(project => {
                   return (
-                    <div className="singular-holder" key={project.title}>
+                    <div className="singular-holder" key={project.contentful_id}>
                       <p className="code-heading">
                         { project.title }
-                        { project.site_url ? <a target="_blank" rel="noopener noreferrer" href={project.site_url}><Icon type="global" /></a> : null }
-                        { project.github_url ? <a target="_blank" rel="noopener noreferrer" href={project.github_url}><Icon type="github" /></a> : null }
+                        <a target="_blank" rel="noopener noreferrer" href={project.url}>
+                          <Icon type={project.url.includes('github.com') ? 'github' : 'global'} />
+                        </a>
                       </p>
                       <p className="content">
                         { project.content }
@@ -126,12 +134,12 @@ const IndexPage = () => {
             <div className="plural-holder">
               <Collapse bordered={false} accordion={true}>
                 {
-                  Object.keys(data.contentJson.skills).map((key, index) => {
+                  Object.keys(data.contentfulSkills.skills).map((key, index) => {
                     return (
                       <Panel header={key.replace('___', ' & ').replace('_', ' ')} key={index}>
                         <List style={{marginLeft: '1.4rem'}}>
                           {
-                            data.contentJson.skills[key].map((item, index) => {
+                            data.contentfulSkills.skills[key].map((item, index) => {
                               return <List.Item style={{padding: '10px 0px'}} key={index}>{item}</List.Item>
                             })
                           }
