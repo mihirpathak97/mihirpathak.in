@@ -17,20 +17,28 @@ const Layout = ({ location, children }) => {
   const [showDrawer, toggleDrawer] = useState(false)
 
   const LinkToRender = () => {
-    switch (location) {
-      case 'home': return (
+    if (location === 'home') {
+      return (
         <div className="contact-wrapper">
           <Icon type="book"/>
           <Link to="/blog">Read my blog</Link>
         </div>
       )
-      default: return (
+    }
+    if (location.includes('blog/')) {
+      return (
         <div className="contact-wrapper">
-          <Icon type="home"/>
-          <Link to="/">Go Home</Link>
+          <Icon type="arrow-left"/>
+          <Link to="/blog">Go Back</Link>
         </div>
       )
     }
+    return (
+      <div className="contact-wrapper">
+        <Icon type="home"/>
+        <Link to="/">Go Home</Link>
+      </div>
+    )
   }
 
   const NavbarSvg = () => (
@@ -72,6 +80,9 @@ const Layout = ({ location, children }) => {
           <h2 className="title">{data.contentfulInfo.title}</h2>
         </div>
         <div className="contact">
+          <LinkToRender />
+        </div>
+        <div className="contact">
           {
             data.contentfulInfo.social.map(social => {
               return (
@@ -82,9 +93,6 @@ const Layout = ({ location, children }) => {
               )
             })
           }
-        </div>
-        <div className="contact">
-          <LinkToRender />
         </div>
         <div className="legal">
           <p className="using">Built with <Icon style={{color: 'red'}} theme="filled" type="heart"/> using <a className="mention" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">React.js</a></p>
