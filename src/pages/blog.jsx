@@ -5,7 +5,7 @@ import Layout from "../components/layout/index";
 import SEO from "../components/seo";
 
 import {
-	Typography, Button
+	Typography
 } from 'antd';
 
 const IndexPage = () => {
@@ -38,8 +38,8 @@ const IndexPage = () => {
     let maxCount = 30;
     let allContent = '';
 
-    content.map((item) => {
-      item.content.map(innerNode => {
+    content.forEach((item) => {
+      item.content.forEach(innerNode => {
         allContent += innerNode.value + ' '
       })
     })
