@@ -295,6 +295,19 @@ $breakpoint-xs: 576px;
     }
   }
 
+  .admin {
+    text-align: left;
+    width: 90%;
+    margin: auto;
+    margin-top: 2.5rem;
+    @media screen and (max-width: 768px) {
+      margin-top: 8rem;
+    }
+    @media screen and (max-width: 576px) {
+      margin-top: 6rem;
+    }
+  }
+
   .error {
     text-align: center;
     width: auto;
