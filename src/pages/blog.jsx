@@ -1,12 +1,11 @@
 import React from "react";
-import { useStaticQuery, graphql } from "gatsby";
-import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
+import { useStaticQuery, graphql, Link } from "gatsby";
 
 import Layout from "../components/layout/index";
 import SEO from "../components/seo";
 
 import {
-	Typography
+	Typography, Button
 } from 'antd';
 
 const IndexPage = () => {
@@ -28,6 +27,26 @@ const IndexPage = () => {
   `)
 
   const posts = data.allContentfulBlogPost.nodes
+
+  /**
+   * Summarizes blog post and returns
+   * first `maxCount` words
+   * 
+   * @param {Array} content 
+   */
+  const summarizePost = content => {
+    let maxCount = 30;
+    let allContent = '';
+
+    content.map((item) => {
+      item.content.map(innerNode => {
+        allContent += innerNode.value + ' '
+      })
+    })
+    
+    return allContent.split(' ').slice(0, maxCount).join(' ')
+  }
+
 
   return (
     <Layout location="blog">
@@ -52,12 +71,9 @@ const IndexPage = () => {
                   <p className="period">
                     {post.createdAt}
                   </p>
-                  <div className="content" dangerouslySetInnerHTML={
-                    {
-                      __html: documentToHtmlString(post.content.json)
-                    }
-                  }>
-                    
+                  <div className="content">
+                    <p>{summarizePost(post.content.json.content)}</p>
+                    <Link className="read-more" to={'/blog/' + post.slug}>Read More</Link>
                   </div>
                 </div>
               )

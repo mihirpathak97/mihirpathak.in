@@ -275,6 +275,12 @@ $breakpoint-xs: 576px;
             font-size: 0.8rem;
           }
         }
+        .read-more {
+          @include animate-underline(#3F51B5, 1rem);
+          @media screen and (max-width: 768px) {
+            @include animate-underline(#3F51B5, 0.8rem);
+          }
+        }
         .title {
           font-size: 1.5rem !important;
           margin-bottom: 5px;
@@ -298,6 +304,7 @@ $breakpoint-xs: 576px;
   .admin {
     text-align: left;
     width: 90%;
+    height: 90%;
     margin: auto;
     margin-top: 2.5rem;
     @media screen and (max-width: 768px) {
@@ -305,6 +312,13 @@ $breakpoint-xs: 576px;
     }
     @media screen and (max-width: 576px) {
       margin-top: 6rem;
+    }
+    .unauth {
+      width: 100%;
+      height: 80%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   }
 
@@ -319,12 +333,16 @@ $breakpoint-xs: 576px;
     @media screen and (max-width: 768px) {
       width: 80vw;
     }
+    .link {
+      @include animate-underline(#3F51B5, auto, true);
+    }
   }
 
   .container {
     position: absolute;
     right: 0;
     left: 20rem;
+    height: 100vh;
     @media screen and (max-width: $breakpoint-md) {
       left: 0;
     }
