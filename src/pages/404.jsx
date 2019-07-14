@@ -9,7 +9,7 @@ import {
 } from 'antd';
 
 const NotFoundPage = () => (
-  <Layout>
+  <Layout location="error">
     <SEO title="Error" />
     <div className="error">
       <Icon type="warning" style={{color: 'yellow', fontSize: '64px'}}></Icon>
