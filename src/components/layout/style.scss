@@ -356,6 +356,37 @@ $breakpoint-xs: 576px;
     @media screen and (max-width: 576px) {
       margin-top: 6rem;
     }
+    .auth {
+      .header {
+        .ant-typography {
+          font-size: 2rem !important;
+          @media screen and (max-width: 768px) {
+            font-size: 1.5rem !important;
+          }
+        }
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .editor {
+        margin-top: 2rem;
+        .ant-input {
+          border: none;
+          outline: none;
+          box-shadow: none;
+          font-size: 1rem;
+          resize: none;
+          padding: 2px;
+          font-family: 'Roboto';
+          &:focus {
+            outline: none;
+            border: none;
+            box-shadow: none;
+          }
+        }
+      }
+    }
     .unauth {
       width: 100%;
       height: 80%;
