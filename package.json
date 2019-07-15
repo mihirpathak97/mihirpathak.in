@@ -19,6 +19,7 @@
     "gatsby-plugin-remove-serviceworker": "^1.0.0",
     "gatsby-plugin-sass": "^2.1.0",
     "gatsby-plugin-sharp": "^2.2.1",
+    "gatsby-plugin-sitemap": "^2.2.3",
     "gatsby-source-contentful": "^2.1.12",
     "gatsby-source-filesystem": "^2.1.0",
     "gatsby-transformer-json": "^2.2.0",

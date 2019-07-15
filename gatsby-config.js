@@ -3,6 +3,7 @@ module.exports = {
     title: `Mihir Pathak`,
     description: `Hey there! I'am Mihir Pathak, a full-stack developer epxperienced with working in React, PHP and Node. This is my personal site and blog`,
     author: `@mihirpathak97`,
+    siteUrl: `https://mihirpathak.in`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -41,6 +42,8 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
     // Remove service worker
-    `gatsby-plugin-remove-serviceworker`
+    `gatsby-plugin-remove-serviceworker`,
+    // Auto-Generate XML SiteMap during build
+    `gatsby-plugin-sitemap`
   ],
 }
