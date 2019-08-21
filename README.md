@@ -1,4 +1,4 @@
-# Hello, Good Evening, and Welcome
+# Hello, and Welcome
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/e86d72b6-4917-4bd2-9d21-a3cb0354e83a/deploy-status)](https://app.netlify.com/sites/mihirpathak97/deploys)
 
@@ -10,7 +10,7 @@ If you want to run this site locally:
 
 - Make sure you have [Yarn](https://yarnpkg.com/en/) installed
 - `git clone https://github.com/mihirpathak97/mihirpathak.in`
-- Run `yarn` to install dependencies
+- Run `yarn install` to install dependencies
 - Run `yarn start`
 - Party.
 
