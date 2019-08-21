@@ -44,6 +44,42 @@ module.exports = {
     // Remove service worker
     `gatsby-plugin-remove-serviceworker`,
     // Auto-Generate XML SiteMap during build
-    `gatsby-plugin-sitemap`
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        exclude: [`/admin/`],
+        serialize: ({ site, allSitePage }) =>
+        allSitePage.edges.map(edge => {
+          switch (edge.node.path) {
+            case '/':
+              return {
+                url: site.siteMetadata.siteUrl + edge.node.path,
+                changefreq: `weekly`,
+                priority: 1,
+              }
+            case '/blog/':
+              return {
+                url: site.siteMetadata.siteUrl + edge.node.path,
+                changefreq: `daily`,
+                priority: 1,
+              }
+            default:
+              return {
+                url: site.siteMetadata.siteUrl + edge.node.path,
+                changefreq: `monthly`,
+                priority: 0.8,
+              }
+          }
+        })
+      }
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: process.env.GOOGLE_ANALYTICS_TRACKING_ID,
+        head: true,
+        pageTransitionDelay: 0
+      }
+    }
   ],
 }
