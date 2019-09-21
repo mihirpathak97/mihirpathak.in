@@ -1,6 +1,8 @@
 # Hello, and Welcome
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/e86d72b6-4917-4bd2-9d21-a3cb0354e83a/deploy-status)](https://app.netlify.com/sites/mihirpathak97/deploys)
+![David](https://img.shields.io/david/mihirpathak97/mihirpathak.in)
+![GitHub](https://img.shields.io/github/license/mihirpathak97/mihirpathak.in)
 
 Welcome to the innards of [my website](https://mihirpathak.in).
 
