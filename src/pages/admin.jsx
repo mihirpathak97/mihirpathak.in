@@ -9,9 +9,6 @@ import {
   Typography
 } from 'antd';
 
-import 'antd/lib/button/style/index.css';
-import 'antd/lib/input/style/index.css';
-
 const AdminPage = () => {
 
   const [authUser, setAuthUser] = useState(null)

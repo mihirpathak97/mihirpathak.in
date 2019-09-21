@@ -12,11 +12,6 @@ import {
   Timeline
 } from 'antd';
 
-import 'antd/lib/tabs/style/index.css';
-import 'antd/lib/collapse/style/index.css';
-import 'antd/lib/list/style/index.css';
-import 'antd/lib/timeline/style/index.css';
-
 const { TabPane } = Tabs;
 const Panel = Collapse.Panel;
 

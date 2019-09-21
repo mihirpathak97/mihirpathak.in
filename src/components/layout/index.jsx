@@ -8,10 +8,6 @@ import {
   Drawer
 } from 'antd';
 
-import 'antd/lib/drawer/style/index.css';
-
-import "./style.scss";
-
 const Layout = ({ location, children }) => {
 
   const [showDrawer, toggleDrawer] = useState(false)
