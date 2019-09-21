@@ -5,7 +5,7 @@
   "version": "2.0.0",
   "author": {
     "name": "Mihir Pathak",
-    "email": "mihirpathak97@gmail.com",
+    "email": "mihirpathak97@users.noreply.github.com",
     "url": "htts://mihirpathak.in"
   },
   "dependencies": {
@@ -44,14 +44,13 @@
     "develop": "gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
-    "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+    "serve": "gatsby serve"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/mihirpathak97/mihirpathak_in"
+    "url": "https://github.com/mihirpathak97/mihirpathak.in"
   },
   "bugs": {
-    "url": "https://github.com/mihirpathak97/mihirpathak_in/issues"
+    "url": "https://github.com/mihirpathak97/mihirpathak.in/issues"
   }
 }
