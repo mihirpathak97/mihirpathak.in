@@ -36,7 +36,7 @@
     "husky": "^3.0.5",
     "lint-staged": "^9.2.5",
     "prettier": "^1.18.2"
-  },  
+  },
   "lint-staged": {
     "src/**/*.{js,jsx,html,scss}": [
       "prettier --write",
