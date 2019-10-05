@@ -1,8 +1,5 @@
 module.exports = {
   siteMetadata: {
-    title: `Mihir Pathak`,
-    description: `Hey there! I'am Mihir Pathak, a full-stack developer epxperienced with working in React, PHP and Node. This is my personal site and blog`,
-    author: `@mihirpathak97`,
     siteUrl: `https://mihirpathak.in`,
   },
   plugins: [
@@ -44,35 +41,7 @@ module.exports = {
     // Remove service worker
     // `gatsby-plugin-remove-serviceworker`,
     // Auto-Generate XML SiteMap during build
-    {
-      resolve: `gatsby-plugin-sitemap`,
-      options: {
-        exclude: [`/admin/`],
-        serialize: ({ site, allSitePage }) =>
-        allSitePage.edges.map(edge => {
-          switch (edge.node.path) {
-            case '/':
-              return {
-                url: site.siteMetadata.siteUrl + edge.node.path,
-                changefreq: `weekly`,
-                priority: 1,
-              }
-            case '/blog/':
-              return {
-                url: site.siteMetadata.siteUrl + edge.node.path,
-                changefreq: `daily`,
-                priority: 1,
-              }
-            default:
-              return {
-                url: site.siteMetadata.siteUrl + edge.node.path,
-                changefreq: `monthly`,
-                priority: 0.8,
-              }
-          }
-        })
-      }
-    },
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
