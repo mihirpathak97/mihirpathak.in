@@ -10,7 +10,8 @@ function SEO({ description, lang, meta, title }) {
         contentfulSeoMetaData {
           author
           description
-          title
+          title,
+          keywords
         }
       }
     `
@@ -29,6 +30,10 @@ function SEO({ description, lang, meta, title }) {
         {
           name: `description`,
           content: metaDescription,
+        },
+        {
+          name: `keywords`,
+          content: site.contentfulSeoMetaData.keywords
         },
         {
           property: `og:title`,
