@@ -14,12 +14,12 @@ const IndexPage = () => {
       }
       allContentfulExperience {
         nodes {
+          contentful_id
+          position
           companyName
           companyUrl
-          contentful_id
           description
           fromDate(formatString: "MMM YYYY")
-          title
           toDate(formatString: "MMM YYYY")
         }
       }
@@ -40,9 +40,9 @@ const IndexPage = () => {
           {data.allContentfulExperience.nodes.map(experience => {
             return (
               <Timeline.Item key={experience.companyUrl}>
-                <div className="item" key={experience.title}>
+                <div className="item" key={experience.contentful_id}>
                   <p className="heading">
-                    {experience.title}
+                    {experience.position}
                     {experience.companyName && experience.companyUrl
                       ? ' @ '
                       : null}
