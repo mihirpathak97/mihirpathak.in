@@ -18,7 +18,9 @@ const IndexPage = () => {
           position
           companyName
           companyUrl
-          description
+          description {
+            description
+          }
           fromDate(formatString: "MMM YYYY")
           toDate(formatString: "MMM YYYY")
         }
@@ -63,7 +65,7 @@ const IndexPage = () => {
                       ? ` - ${experience.toDate}`
                       : ' - Present'}
                   </p>
-                  <p className="content">{experience.description}</p>
+                  <p className="content">{experience.description.description}</p>
                 </div>
               </Timeline.Item>
             )
