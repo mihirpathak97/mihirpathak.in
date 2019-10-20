@@ -50,9 +50,9 @@ $breakpoint-xl: 1200px;
 $breakpoint-lg: 992px;
 $breakpoint-md: 768px;
 $breakpoint-sm: 576px;
-$breakpoint-xs: 576px;
+$breakpoint-xs: 320px;
 
-@mixin animate-underline($color, $font-size, $is-bold: false) {
+@mixin animated-link($color, $font-size, $is-bold: false) {
   color: $color;
   font-size: $font-size;
   position: relative;
@@ -81,13 +81,39 @@ $breakpoint-xs: 576px;
   }
 }
 
+@mixin for-tiny-phone {
+  @media screen and (max-width: $breakpoint-xs) {
+    @content;
+  }
+}
+@mixin for-phone {
+  @media screen and (max-width: $breakpoint-sm) and (orientation: portrait) {
+    @content;
+  }
+}
+@mixin for-tablet-portrait {
+  @media screen and (max-width: $breakpoint-md) and (orientation: portrait) {
+    @content;
+  }
+}
+@mixin for-tablet-landscape {
+  @media screen and (max-width: $breakpoint-lg) and (orientation: landscape) {
+    @content;
+  }
+}
+@mixin for-desktop {
+  @media (min-width: $breakpoint-lg) {
+    @content;
+  }
+}
+
 .sidebar {
   position: fixed;
   top: 0;
   left: 0;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   transition: left 0.2s ease;
-  @media screen and (max-width: $breakpoint-md) {
+  @include for-tablet-portrait {
     left: -21rem;
   }
 }
@@ -99,7 +125,7 @@ $breakpoint-xs: 576px;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 
   display: none;
-  @media screen and (max-width: $breakpoint-md) {
+  @include for-tablet-portrait {
     display: flex;
   }
 
@@ -112,6 +138,10 @@ $breakpoint-xs: 576px;
   position: fixed;
   height: 3rem;
 
+  @include for-phone {
+    height: 2rem;
+  }
+
   .profile {
     border-radius: 50%;
     img,
@@ -120,9 +150,9 @@ $breakpoint-xs: 576px;
     }
     width: 50px;
     height: 50px;
-    @media screen and (max-width: $breakpoint-sm) {
-      width: 40px;
-      height: 40px;
+    @include for-phone {
+      width: 35px;
+      height: 35px;
     }
   }
   i {
@@ -132,6 +162,12 @@ $breakpoint-xs: 576px;
     font-weight: 400;
     letter-spacing: 3px;
     font-size: 1.2rem;
+    @include for-tablet-portrait {
+      font-size: 18px;
+    }
+    @include for-phone {
+      font-size: 16px;
+    }
   }
 }
 
@@ -140,7 +176,7 @@ $breakpoint-xs: 576px;
   right: 0;
   left: 20rem;
   height: 100vh;
-  @media screen and (max-width: $breakpoint-md) {
+  @include for-tablet-portrait {
     left: 0;
   }
 }
@@ -152,14 +188,20 @@ $breakpoint-xs: 576px;
   font-family: 'Raleway';
   margin: auto;
   margin-top: 2rem;
-  @media screen and (max-width: $breakpoint-md) {
+  @include for-tablet-portrait {
     margin-top: 6rem;
+  }
+  @include for-phone {
+    margin-top: 5rem;
   }
   &:last-child {
     margin-bottom: 3rem;
   }
   .about {
     font-size: 1rem;
+    @include for-tiny-phone {
+      font-size: 0.8rem;
+    }
   }
   .timeline {
     .ant-timeline-item {
@@ -173,6 +215,9 @@ $breakpoint-xs: 576px;
       }
     }
     .item {
+      @include for-tiny-phone {
+        font-size: 0.8rem;
+      }
       .heading {
         margin-bottom: 0;
       }
@@ -188,7 +233,7 @@ $breakpoint-xs: 576px;
     }
   }
   .mention {
-    @include animate-underline(#000000, inherit, true);
+    @include animated-link(#000000, inherit, true);
   }
 }
 
@@ -200,11 +245,11 @@ $breakpoint-xs: 576px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  @media screen and (max-width: $breakpoint-md) {
+  @include for-tablet-portrait {
     width: 80vw;
   }
   .link {
-    @include animate-underline(#3f51b5, inherit, true);
+    @include animated-link(#3f51b5, inherit, true);
   }
 }
 
@@ -213,8 +258,16 @@ $breakpoint-xs: 576px;
   height: 100vh;
   width: 16rem;
 
-  @media screen and (max-width: $breakpoint-md) {
+  @include for-tablet-portrait {
     width: 256px;
+  }
+
+  @include for-phone {
+    width: 200px;
+  }
+
+  @include for-tiny-phone {
+    width: 160px;
   }
 
   background-color: #262626;
@@ -228,6 +281,10 @@ $breakpoint-xs: 576px;
     border-radius: 50%;
     width: 200px;
     height: 190px;
+    @include for-phone {
+      width: 120px;
+      height: 110px;
+    }
   }
   .title {
     .name {
@@ -235,6 +292,12 @@ $breakpoint-xs: 576px;
       font-weight: 400;
       margin-block-end: 0;
       letter-spacing: 3px;
+      @include for-phone {
+        font-size: 24px;
+      }
+      @include for-tiny-phone {
+        font-size: 18px;
+      }
     }
     .position {
       font-family: 'Roboto';
@@ -243,22 +306,41 @@ $breakpoint-xs: 576px;
       letter-spacing: 4px;
       text-transform: uppercase;
       margin-top: 0.5rem;
+      @include for-phone {
+        letter-spacing: 2px;
+      }
+      @include for-tiny-phone {
+        letter-spacing: 1.2px;
+        font-size: 10px;
+      }
     }
   }
   .contact {
     margin-top: 3rem;
+    @include for-tiny-phone {
+      margin-top: 1rem;
+    }
     .link {
       display: flex;
       margin: auto;
       height: 40px;
+      @include for-tiny-phone {
+        height: 35px;
+      }
       align-items: center;
       i {
         font-size: 1rem;
         margin-top: 5px;
+        @include for-tiny-phone {
+          font-size: 12px;
+        }
       }
       a {
         margin-left: 1rem;
-        @include animate-underline(#f5f8fa, 1rem);
+        @include animated-link(#f5f8fa, 1rem);
+        @include for-phone {
+          font-size: 12px;
+        }
       }
     }
   }
@@ -268,15 +350,24 @@ $breakpoint-xs: 576px;
     margin-bottom: 3rem;
     .credit {
       font-size: 14px;
+      @include for-tiny-phone {
+        font-size: 10px;
+      }
       i {
         padding: 5px;
       }
       a {
-        @include animate-underline(#f5f8fa, 14px);
+        @include animated-link(#f5f8fa, 14px);
+        @include for-tiny-phone {
+          @include animated-link(#f5f8fa, 10px);
+        }
       }
     }
     .copyright {
       font-size: 12px;
+      @include for-tiny-phone {
+        font-size: 10px;
+      }
     }
   }
 }
