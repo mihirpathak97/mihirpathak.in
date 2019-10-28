@@ -21,3 +21,10 @@ To build for production, run `yarn build`.
 ## Who This Repo is For
 
 This repo is mostly for me. I, like many of you, host my code on GitHub for reasons of portability, ease of work, and peace of mind. Beyond my own needs, I have also open-sourced this repo for you, the reader (and most likely developer), to explore the things that make my site tick.
+
+## This Project was Made Possible With
+
+- [React.js](https://www.reactjs.org)
+- [Gatsby JS](https://www.gatsbyjs.org)
+- [Contentful](https://www.contentful.com)
+- [Netlify](https://www.netlify.com)
